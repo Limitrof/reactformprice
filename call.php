@@ -161,37 +161,42 @@ class DankButton extends React.Component {
 				usehiddencheckbox:true,
 				category: 'Вводные данные: общая информация о программе лояльности', 
 				showwordprefix:'', 
+				showwordsuffix:'', 
 				comment:'ориентировочное время проведения Программы', 
 				price: '', 
 				stocked: true, 
 				name: 'Укажите длительность Программы', 
 				arrOfVlue:[{valOf:1,strInfo:'1-3 месяца'},{valOf:2,strInfo:'4-6 месяцев'},{valOf:5,strInfo:'более 6 месяцев'}]
 			},
-	  {unicname:'disributors_quantity',indexid:2,usehiddencheckbox:true,category: 'Вводные данные: общая информация о программе лояльности', showwordprefix:'', comment:'кол-во дистрибьюторов', price: '', stocked: false, name: 'Укажите количество дистрибъюторов', arrOfVlue:'inputdistributor'},
-	  {unicname:'region',indexid:3,usehiddencheckbox:true,category: 'Вводные данные: общая информация о программе лояльности', showwordprefix:'', comment:'some comment text', price: '', stocked: true, name: 'География программы', arrOfVlue:[{valOf:1,strInfo:'Беларусь'},{valOf:2,strInfo:'Россия'},{valOf:2,strInfo:'Украина'},{valOf:3,strInfo:'Казахстан'},{valOf:4,strInfo:'Другие страны'},{valOf:4,strInfo:'Три страны Прим. Украина, Россия, Казахстан'}]},
+	  {unicname:'disributors_quantity',indexid:2,usehiddencheckbox:true,category: 'Вводные данные: общая информация о программе лояльности', showwordprefix:'', showwordsuffix:'', comment:'кол-во дистрибьюторов', price: '', stocked: false, name: 'Укажите количество дистрибъюторов', arrOfVlue:'inputdistributor'},
+	  {unicname:'region',indexid:3,usehiddencheckbox:true,category: 'Вводные данные: общая информация о программе лояльности', showwordprefix:'', showwordsuffix:'', comment:'some comment text', price: '', stocked: true, name: 'География программы', arrOfVlue:[{valOf:1,strInfo:'Беларусь'},{valOf:2,strInfo:'Россия'},{valOf:2,strInfo:'Украина'},{valOf:3,strInfo:'Казахстан'},{valOf:4,strInfo:'Другие страны'},{valOf:4,strInfo:'Три страны Прим. Украина, Россия, Казахстан'}]},
 	  
 	  //ВТОРОЙ раздел - разработка программы
-	  {unicname:'rooles',indexid:10,usehiddencheckbox:false,category: 'Разработка программы: услуги агентства', showwordprefix:'от', comment:'условия программы', price: '550', stocked: true, name: 'Условия программы', arrOfVlue:'none'},
-	  {unicname:'disr',indexid:11,usehiddencheckbox:false,category: 'Разработка программы: услуги агентства', showwordprefix:'от', comment:'концепция со слоганом, название', price: '200', stocked: true, name: 'Концепция со слоганом, название', arrOfVlue:'none'},
-	  {unicname:'disr',indexid:12,usehiddencheckbox:false,category: 'Разработка программы: услуги агентства', showwordprefix:'', comment:'презентация для дистрибьюторов', price: '150', stocked: true, name: 'Презентация для дистрибьюторов', arrOfVlue:'none'},
-	  {unicname:'disr',indexid:13,usehiddencheckbox:false,category: 'Разработка программы: услуги агентства', showwordprefix:'', comment:'инструкция для дистрибьюторов', price: '100', stocked: true, name: 'Инструкция для дистрибьюторов', arrOfVlue:'none'},
+	  {unicname:'rooles',indexid:10,usehiddencheckbox:false,category: 'Разработка программы: услуги агентства', showwordprefix:'от', showwordsuffix:'€', comment:'условия программы', price: '550', stocked: true, name: 'Условия программы', arrOfVlue:'none'},
+	  {unicname:'disr',indexid:11,usehiddencheckbox:false,category: 'Разработка программы: услуги агентства', showwordprefix:'от', showwordsuffix:'€', comment:'концепция со слоганом, название', price: '200', stocked: true, name: 'Концепция со слоганом, название', arrOfVlue:'none'},
+	  {unicname:'disr',indexid:12,usehiddencheckbox:false,category: 'Разработка программы: услуги агентства', showwordprefix:'', showwordsuffix:'€', comment:'презентация для дистрибьюторов', price: '150', stocked: true, name: 'Презентация для дистрибьюторов', arrOfVlue:'none'},
+	  {unicname:'disr',indexid:13,usehiddencheckbox:false,category: 'Разработка программы: услуги агентства', showwordprefix:'', showwordsuffix:'€', comment:'инструкция для дистрибьюторов', price: '100', stocked: true, name: 'Инструкция для дистрибьюторов', arrOfVlue:'none'},
 	 
 	//ТРЕТИЙ раздел 
-	 {unicname:'disr',indexid:21,usehiddencheckbox:false,category: 'Платформа для Программы лояльности:', showwordprefix:'от', comment:'функционал регистрации участников, функционал загрузки оборотов, нотификация участников о результатах (e-mail), техническая поддержка', price: '7800', stocked: false, name: 'Платформа для Программы (website)', arrOfVlue:'none'},	 
-	 {unicname:'disr',indexid:22,usehiddencheckbox:true,category: 'Платформа для Программы лояльности:', showwordprefix:'', comment:'', price: '', stocked: false, name: ' - функционал регистрации участников', arrOfVlue:'none'},
-	 {unicname:'disr',indexid:23,usehiddencheckbox:true,category: 'Платформа для Программы лояльности:', showwordprefix:'', comment:'', price: '', stocked: false, name: ' - функционал загрузки оборотов', arrOfVlue:'none'},
-	 {unicname:'disr',indexid:24,usehiddencheckbox:true,category: 'Платформа для Программы лояльности:', showwordprefix:'', comment:'', price: '', stocked: false, name: ' - нотификация участников о результатах (e-mail)', arrOfVlue:'none'},
-	 {unicname:'disr',indexid:25,usehiddencheckbox:true,category: 'Платформа для Программы лояльности:', showwordprefix:'', comment:'', price: '', stocked: false, name: ' - функционал регистрации участников', arrOfVlue:'none'},
+	 {unicname:'disr',indexid:21,usehiddencheckbox:false,category: 'Платформа для Программы лояльности:', showwordprefix:'от', showwordsuffix:'€', comment:'функционал регистрации участников, функционал загрузки оборотов, нотификация участников о результатах (e-mail), техническая поддержка', price: '7800', stocked: false, name: 'Платформа для Программы (website)', arrOfVlue:'none'},	 
+	 {unicname:'disr',indexid:22,usehiddencheckbox:true,category: 'Платформа для Программы лояльности:', showwordprefix:'', showwordsuffix:'', comment:'', price: '', stocked: false, name: ' - функционал регистрации участников', arrOfVlue:'none'},
+	 {unicname:'disr',indexid:23,usehiddencheckbox:true,category: 'Платформа для Программы лояльности:', showwordprefix:'', showwordsuffix:'', comment:'', price: '', stocked: false, name: ' - функционал загрузки оборотов', arrOfVlue:'none'},
+	 {unicname:'disr',indexid:24,usehiddencheckbox:true,category: 'Платформа для Программы лояльности:', showwordprefix:'', showwordsuffix:'', comment:'', price: '', stocked: false, name: ' - нотификация участников о результатах (e-mail)', arrOfVlue:'none'},
+	 {unicname:'disr',indexid:25,usehiddencheckbox:true,category: 'Платформа для Программы лояльности:', showwordprefix:'', showwordsuffix:'', comment:'', price: '', stocked: false, name: ' - функционал регистрации участников', arrOfVlue:'none'},
 		 
 	 //ЧЕТВЕРТЫЙ раздел
-	  {unicname:'disr',indexid:31,usehiddencheckbox:false,category: 'Дизайн key visual: ', showwordprefix:'', comment:'дизайн для платформы', price: '1500', stocked: true, name: 'Дизайн для платформы (website)', arrOfVlue:'none'},
-	  {unicname:'disr',indexid:32,usehiddencheckbox:false,category: 'Дизайн key visual: ', showwordprefix:'', comment:'Дизайн рекламного макета Программы', price: '150', stocked: true, name: 'Дизайн рекламного макета Программы', arrOfVlue:'none'},
-	  {unicname:'price_for_banner',indexid:33,usehiddencheckbox:false,category: 'Дизайн key visual: ', showwordprefix:'', comment:'дизайн баннеров для дистрибьюторов', price: '1800', stocked: true, name: 'Дизайн баннеров для дистрибьюторов', arrOfVlue:'none'},
-	  {unicname:'count_for_banner',indexid:34,usehiddencheckbox:true,category: 'Дизайн key visual: ', showwordprefix:'', comment:'some comment text', price: '', stocked: true, name: 'Количество баннеров', arrOfVlue:5},
-	  {unicname:'disr',indexid:35,usehiddencheckbox:false,category: 'Дизайн key visual: ', showwordprefix:'', comment:'some comment text', price: '1500', stocked: true, name: 'Дизайн рекламного макета Программы', arrOfVlue:'none'},
-	  {unicname:'disr',indexid:36,usehiddencheckbox:false,category: 'Дизайн key visual: ', showwordprefix:'', comment:'дизайн сертификатов победителям', price: '200', stocked: true, name: 'Дизайн сертификатов победителям (до 3 макетов)', arrOfVlue:'none'},  
-		  
-	  {unicname:'bonus_for_disr',indexid:16,usehiddencheckbox:false,category: 'Призовой фонд', showwordprefix:'от', comment:'Рассчет осуществляется на основе количества дистрибъюторов указаного во Вводном разделе', price: '300', stocked: true, name: 'Поощрения сотрудников дистрибьюторов (супервайзеров)', arrOfVlue:'none'}
+	  {unicname:'disr',indexid:31,usehiddencheckbox:false,category: 'Дизайн key visual: ', showwordprefix:'', showwordsuffix:'€', comment:'дизайн для платформы', price: '1500', stocked: true, name: 'Дизайн для платформы (website)', arrOfVlue:'none'},
+	  {unicname:'disr',indexid:32,usehiddencheckbox:false,category: 'Дизайн key visual: ', showwordprefix:'', showwordsuffix:'€', comment:'Дизайн рекламного макета Программы', price: '150', stocked: true, name: 'Дизайн рекламного макета Программы', arrOfVlue:'none'},
+	  {unicname:'price_for_banner',indexid:33,usehiddencheckbox:false,category: 'Дизайн key visual: ', showwordprefix:'', showwordsuffix:'€', comment:'дизайн баннеров для дистрибьюторов', price: '1800', stocked: true, name: 'Дизайн баннеров для дистрибьюторов', arrOfVlue:'none'},
+	  {unicname:'count_for_banner',indexid:34,usehiddencheckbox:true,category: 'Дизайн key visual: ', showwordprefix:'', showwordsuffix:'', comment:'some comment text', price: '', stocked: true, name: 'Количество баннеров', arrOfVlue:5},
+	  {unicname:'disr',indexid:35,usehiddencheckbox:false,category: 'Дизайн key visual: ', showwordprefix:'', showwordsuffix:'€', comment:'some comment text', price: '1500', stocked: true, name: 'Дизайн рекламного макета Программы', arrOfVlue:'none'},
+	  {unicname:'disr',indexid:36,usehiddencheckbox:false,category: 'Дизайн key visual: ', showwordprefix:'', showwordsuffix:'€', comment:'дизайн сертификатов победителям', price: '200', stocked: true, name: 'Дизайн сертификатов победителям (до 3 макетов)', arrOfVlue:'none'},  
+		
+	  //ПРИЗОВОЙ фонд
+	   {unicname:'users_quatity',indexid:41,usehiddencheckbox:false,category: 'Призовой фонд', showwordprefix:'от', showwordsuffix:'', comment:'укажите количество участников ИЛИ количество победителей', price: '', stocked: true, name: 'Количество участников', arrOfVlue:'none'}
+	   {unicname:'vinner_quantity',indexid:42,usehiddencheckbox:false,category: 'Призовой фонд', showwordprefix:'от', showwordsuffix:'', comment:'укажите количество участников ИЛИ количество победителей', price: '', stocked: true, name: 'Количество победителей', arrOfVlue:'none'}
+	   
+	  {unicname:'bonus_for_disr',indexid:16,usehiddencheckbox:false,category: 'Призовой фонд', showwordprefix:'от', showwordsuffix:'', comment:'Рассчет осуществляется на основе количества дистрибъюторов указаного во Вводном разделе', price: '300', stocked: true, name: 'Поощрения сотрудников дистрибьюторов (супервайзеров)', arrOfVlue:'none'}
 		];
 		var buttonListElements = [];
 		var lastCategory = null;
@@ -228,6 +233,12 @@ class DankButton extends React.Component {
 					var pricewithprefix = product.showwordprefix + ' ' + product.price;
 				} else {
 					pricewithprefix = product.price;
+				}				
+				//check suffix and set if exist
+				if (product.showwordsuffix != '') {	
+					var pricewithprefixandsuffix = pricewithprefix + ' ' + product.showwordsuffix ;
+				} else {
+					pricewithprefixandsuffix = pricewithprefix;
 				}
 				
 				  buttonListElements.push(
@@ -239,7 +250,7 @@ class DankButton extends React.Component {
 					
 					<div className="col-md-5 bcgray">{usersControlFormula}</div>
 					
-					<div className="col-md-2 bcgray"><SomeSum priceinrow={pricewithprefix} key={product.price} /></div>
+					<div className="col-md-2 bcgray"><SomeSum priceinrow={pricewithprefixandsuffix} key={product.price} /></div>
 
 				</div>);
 				  lastCategory = product.category;
