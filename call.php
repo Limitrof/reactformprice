@@ -49,6 +49,9 @@ display:none;
 .width20{
 width: 20px;
 }
+.width70{
+width: 70px;
+}
 </style>
 </head>
 <body>
@@ -144,7 +147,16 @@ class DankButton extends React.Component {
 			  {unicname:'disr',indexid:35,category: 'Дизайн key visual: информация о Key visual услуга',  baseprice: '150',price: '0', stocked: true, name: 'Дизайн рекламного макета Программы', formula: 'multi',multinumber:1, needit: false},
 			  {unicname:'disr',indexid:36,category: 'Дизайн key visual: информация о Key visual услуга',  baseprice: '200',price: '0', stocked: true, name: 'Дизайн сертификатов победителям (до 3 макетов)', formula: 'multi',multinumber:1, needit: false},
 			  
-			  {unicname:'bonus_for_disr',indexid:16,category: 'Призовой фонд', baseprice: '300', price: '0', stocked: true, name: 'Поощрения сотрудников дистрибьюторов (супервайзеров)', formula: 'multi',multinumber:1, needit: false}	
+			  {unicname:'bonus_for_disr',indexid:41,category: 'Призовой фонд', baseprice: '', price: '0', stocked: true, name: 'Количество участников', formula: 'multi',multinumber:1600, needit: false},			  
+			  {unicname:'bonus_for_disr',indexid:42,category: 'Призовой фонд', baseprice: '', price: '0', stocked: true, name: 'Количество победителей', formula: 'multi',multinumber:500, needit: false},
+			  
+			  {unicname:'bonus_find',indexid:43,category: 'Призовой фонд', baseprice: '200', price: '0', stocked: true, name: 'Подбор поощрений призового фонда', formula: 'multi',multinumber:1, needit: false},			  
+			  {unicname:'bonus_create',indexid:44,category: 'Призовой фонд', baseprice: '19000', price: '0', stocked: true, name: 'Закупка/изготовление поощрений', formula: 'multi',multinumber:1, needit: false},
+			  
+			  {unicname:'bonus_find',indexid:45,category: 'Призовой фонд', baseprice: '2500', price: '0', stocked: true, name: 'Брендирование поощрений', formula: 'multi',multinumber:1, needit: false},			  
+			  {unicname:'bonus_create',indexid:46,category: 'Призовой фонд', baseprice: '2850', price: '0', stocked: true, name: 'Логистика (хранение, упаковка)', formula: 'multi',multinumber:1, needit: false},
+			  
+			  {unicname:'bonus_for_disr',indexid:49,category: 'Призовой фонд', baseprice: '300', price: '0', stocked: true, name: 'Поощрения сотрудников дистрибьюторов (супервайзеров)', formula: 'multi',multinumber:1, needit: false}	
 			  ]
 	}
   } 
@@ -168,7 +180,7 @@ class DankButton extends React.Component {
 				name: 'Укажите длительность Программы', 
 				arrOfVlue:[{valOf:1,strInfo:'1-3 месяца'},{valOf:2,strInfo:'4-6 месяцев'},{valOf:5,strInfo:'более 6 месяцев'}]
 			},
-	  {unicname:'disributors_quantity',indexid:2,usehiddencheckbox:true,category: 'Вводные данные: общая информация о программе лояльности', showwordprefix:'', showwordsuffix:'', comment:'кол-во дистрибьюторов', price: '', stocked: false, name: 'Укажите количество дистрибъюторов', arrOfVlue:'inputdistributor'},
+	  {unicname:'disributors_quantity',indexid:2,usehiddencheckbox:true,category: 'Вводные данные: общая информация о программе лояльности', showwordprefix:'', showwordsuffix:'', comment:'кол-во дистрибьюторов', price: '', stocked: false, name: 'Укажите количество дистрибъюторов', arrOfVlue:1},
 	  {unicname:'region',indexid:3,usehiddencheckbox:true,category: 'Вводные данные: общая информация о программе лояльности', showwordprefix:'', showwordsuffix:'', comment:'some comment text', price: '', stocked: true, name: 'География программы', arrOfVlue:[{valOf:1,strInfo:'Беларусь'},{valOf:2,strInfo:'Россия'},{valOf:2,strInfo:'Украина'},{valOf:3,strInfo:'Казахстан'},{valOf:4,strInfo:'Другие страны'},{valOf:4,strInfo:'Три страны Прим. Украина, Россия, Казахстан'}]},
 	  
 	  //ВТОРОЙ раздел - разработка программы
@@ -193,10 +205,16 @@ class DankButton extends React.Component {
 	  {unicname:'disr',indexid:36,usehiddencheckbox:false,category: 'Дизайн key visual: ', showwordprefix:'', showwordsuffix:'€', comment:'дизайн сертификатов победителям', price: '200', stocked: true, name: 'Дизайн сертификатов победителям (до 3 макетов)', arrOfVlue:'none'},  
 		
 	  //ПРИЗОВОЙ фонд
-	   {unicname:'users_quatity',indexid:41,usehiddencheckbox:false,category: 'Призовой фонд', showwordprefix:'от', showwordsuffix:'', comment:'укажите количество участников ИЛИ количество победителей', price: '', stocked: true, name: 'Количество участников', arrOfVlue:'none'}
-	   {unicname:'vinner_quantity',indexid:42,usehiddencheckbox:false,category: 'Призовой фонд', showwordprefix:'от', showwordsuffix:'', comment:'укажите количество участников ИЛИ количество победителей', price: '', stocked: true, name: 'Количество победителей', arrOfVlue:'none'}
+	   {unicname:'users_quatity',indexid:41,usehiddencheckbox:true,category: 'Призовой фонд', showwordprefix:'', showwordsuffix:'', comment:'укажите количество участников ИЛИ количество победителей', price: '', stocked: true, name: 'Количество участников', arrOfVlue:1600},
+	   {unicname:'vinners_quantity',indexid:42,usehiddencheckbox:true,category: 'Призовой фонд', showwordprefix:'', showwordsuffix:'', comment:'укажите количество участников ИЛИ количество победителей', price: '', stocked: true, name: 'Количество победителей', arrOfVlue:500},
 	   
-	  {unicname:'bonus_for_disr',indexid:16,usehiddencheckbox:false,category: 'Призовой фонд', showwordprefix:'от', showwordsuffix:'', comment:'Рассчет осуществляется на основе количества дистрибъюторов указаного во Вводном разделе', price: '300', stocked: true, name: 'Поощрения сотрудников дистрибьюторов (супервайзеров)', arrOfVlue:'none'}
+	   {unicname:'bonus_find',indexid:43,usehiddencheckbox:false,category: 'Призовой фонд', showwordprefix:'', showwordsuffix:'€', comment:'подбор поощрений призового фонда', price: '200', stocked: true, name: 'Подбор поощрений призового фонда', arrOfVlue:'none'},
+	   {unicname:'bonus_create',indexid:44,usehiddencheckbox:false,category: 'Призовой фонд', showwordprefix:'', showwordsuffix:'€', comment:'закупка/изготовление поощрений', price: '19000', stocked: true, name: 'Закупка/изготовление поощрений', arrOfVlue:'none'},	 
+	   
+	   {unicname:'bonus_find',indexid:45,usehiddencheckbox:false,category: 'Призовой фонд', showwordprefix:'', showwordsuffix:'€', comment:'брендирование поощрений', price: '2850', stocked: true, name: 'Брендирование поощрений', arrOfVlue:'none'},
+	   {unicname:'bonus_create',indexid:46,usehiddencheckbox:false,category: 'Призовой фонд', showwordprefix:'', showwordsuffix:'€', comment:'логистика (хранение, упаковка)', price: '2500', stocked: true, name: 'Логистика (хранение, упаковка)', arrOfVlue:'none'},
+	   
+	  {unicname:'bonus_for_disr',indexid:49,usehiddencheckbox:false,category: 'Призовой фонд', showwordprefix:'от', showwordsuffix:'', comment:'Рассчет осуществляется на основе количества дистрибъюторов указаного во Вводном разделе', price: '300', stocked: true, name: 'Поощрения сотрудников дистрибьюторов (супервайзеров)', arrOfVlue:'none'}
 		];
 		var buttonListElements = [];
 		var lastCategory = null;
@@ -207,10 +225,15 @@ class DankButton extends React.Component {
 			PRODUCTS.map(function(product,index) {
 				//UNIC FORMULA
 				var usersControlFormula = [];
-				if (product.arrOfVlue=='inputdistributor') {
+				if (product.unicname=='disributors_quantity') {
+					this.state.value = this.state.resultPrices[index].multinumber;
 					usersControlFormula.push(<div><input className="width20" type="text"  onChange={this.setDistributorQuantiy.bind(this,index)}  value={this.state.value}/></div>);
 				} else if (product.unicname=='count_for_banner') {
-					usersControlFormula.push(<div><input className="width20" type="text"  onChange={this.setBannerQuantiy.bind(this,index)}  value={this.state.resultPrices[index].multinumber}/></div>);
+					usersControlFormula.push(<div><input className="width20" type="text"  onChange={this.setBannerQuantiy.bind(this,index)}  value={this.state.resultPrices[index].multinumber}/></div>);				
+				} else if (product.unicname=='users_quatity') {
+					usersControlFormula.push(<div><input className="width70" type="text"  onChange={this.setUserQuantiy.bind(this,index)}  value={this.state.resultPrices[index].multinumber}/></div>);				
+				} else if (product.unicname=='vinners_quantity') {
+					usersControlFormula.push(<div><input className="width70" type="text"  onChange={this.setVinnerQuantiy.bind(this,index)}  value={this.state.resultPrices[index].multinumber}/></div>);
 				} else if (product.arrOfVlue=='none') {
 					usersControlFormula.push(<div></div>);//<!-- for comment and so on-->
 				} else {		
@@ -269,9 +292,36 @@ class DankButton extends React.Component {
 	// render  
 	///////////
 	
+	setUserQuantiy(indexinarray,event){
+		var valueForUserQuantity = event.target.value;
+		var newArrForFormula = this.state.resultPrices;
+		newArrForFormula[indexinarray].multinumber = valueForUserQuantity;
+	 
+		 /* newArrForFormula.map(function(currentRow,index) {
+			   if (currentRow.unicname == 'price_for_banner') {
+				   newArrForFormula[index].multinumber = valueForBannerQuantity;
+			   }
+		   }); */   
+		  this.setState({ resultPrices: newArrForFormula });
+
+		  this.recountIt();
+	}	
+	setVinnerQuantiy(indexinarray,event){
+		  var valueForVinnerQuantity = event.target.value;
+		 var newArrForFormula = this.state.resultPrices;
+		 newArrForFormula[indexinarray].multinumber = valueForVinnerQuantity;
+	 
+		/*  newArrForFormula.map(function(currentRow,index) {
+			   if (currentRow.unicname == 'price_for_banner') {
+				   newArrForFormula[index].multinumber = valueForBannerQuantity;
+			   }
+		   });    */
+		  this.setState({ resultPrices: newArrForFormula });
+
+		  this.recountIt();
+	}	
 	setBannerQuantiy(indexinarray,event){
-		 alert(event.target.value);
-		  var valueForBannerQuantity = event.target.value;
+		 var valueForBannerQuantity = event.target.value;
 		 var newArrForFormula = this.state.resultPrices;
 		 newArrForFormula[indexinarray].multinumber = valueForBannerQuantity;
 	 
