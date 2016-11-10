@@ -121,6 +121,7 @@ class DankButton extends React.Component {
     //this.handleClickAdditional = this.handleClickAdditional.bind(this)  
 	this.state = {
 		allAmount: 0,
+		bannerquantity: 5,
 		resultPrices:[  
 			  {unicname:'period', indexid:1,category: 'Вводные данные', baseprice: '0', price: '0', stocked: true, name: 'Укажите длительность Программы', formula: 'multi',multinumber:1, needit: false},
 			  {unicname:'disributors_quantity',indexid:2,category: 'Вводные данные',  baseprice: '0', price: '0', stocked: false, name: 'IT консалтинг', formula: 'multi',multinumber:1, needit: false},
@@ -139,7 +140,7 @@ class DankButton extends React.Component {
 			  
 			  {unicname:'disr',indexid:31,category: 'Дизайн key visual: информация о Key visual услуга',  baseprice: '1500',price: '0', stocked: true, name: 'Дизайн для платформы (website)', formula: 'multi',multinumber:1, needit: false},
 			  {unicname:'disr',indexid:32,category: 'Дизайн key visual: информация о Key visual услуга',  baseprice: '150',price: '0', stocked: true, name: 'Дизайн рекламного макета Программы', formula: 'multi',multinumber:1, needit: false},			  {unicname:'price_for_banner',indexid:33,category: 'Дизайн key visual: информация о Key visual услуга',  baseprice: '300',price: '1800', stocked: true, name: 'Дизайн баннеров для дистрибьюторов', formula: 'multi',multinumber:5, needit: false},
-			  {unicname:'count_for_banner',indexid:34,category: 'Дизайн key visual: информация о Key visual услуга',  baseprice: '0',price: '0', stocked: true, name: 'Количество баннеров', formula: 'multi',multinumber:1, needit: false},
+			  {unicname:'count_for_banner',indexid:34,category: 'Дизайн key visual: информация о Key visual услуга',  baseprice: '0',price: '0', stocked: true, name: 'Количество баннеров', formula: 'multi',multinumber:5, needit: false},
 			  {unicname:'disr',indexid:35,category: 'Дизайн key visual: информация о Key visual услуга',  baseprice: '150',price: '0', stocked: true, name: 'Дизайн рекламного макета Программы', formula: 'multi',multinumber:1, needit: false},
 			  {unicname:'disr',indexid:36,category: 'Дизайн key visual: информация о Key visual услуга',  baseprice: '200',price: '0', stocked: true, name: 'Дизайн сертификатов победителям (до 3 макетов)', formula: 'multi',multinumber:1, needit: false},
 			  
@@ -186,7 +187,7 @@ class DankButton extends React.Component {
 	  {unicname:'disr',indexid:31,usehiddencheckbox:false,category: 'Дизайн key visual: ', showwordprefix:'', comment:'дизайн для платформы', price: '1500', stocked: true, name: 'Дизайн для платформы (website)', arrOfVlue:'none'},
 	  {unicname:'disr',indexid:32,usehiddencheckbox:false,category: 'Дизайн key visual: ', showwordprefix:'', comment:'Дизайн рекламного макета Программы', price: '150', stocked: true, name: 'Дизайн рекламного макета Программы', arrOfVlue:'none'},
 	  {unicname:'price_for_banner',indexid:33,usehiddencheckbox:false,category: 'Дизайн key visual: ', showwordprefix:'', comment:'дизайн баннеров для дистрибьюторов', price: '1800', stocked: true, name: 'Дизайн баннеров для дистрибьюторов', arrOfVlue:'none'},
-	  {unicname:'count_for_banner',indexid:34,usehiddencheckbox:true,category: 'Дизайн key visual: ', showwordprefix:'', comment:'some comment text', price: '', stocked: true, name: 'Количество баннеров', arrOfVlue:'inputbanner'},
+	  {unicname:'count_for_banner',indexid:34,usehiddencheckbox:true,category: 'Дизайн key visual: ', showwordprefix:'', comment:'some comment text', price: '', stocked: true, name: 'Количество баннеров', arrOfVlue:5},
 	  {unicname:'disr',indexid:35,usehiddencheckbox:false,category: 'Дизайн key visual: ', showwordprefix:'', comment:'some comment text', price: '1500', stocked: true, name: 'Дизайн рекламного макета Программы', arrOfVlue:'none'},
 	  {unicname:'disr',indexid:36,usehiddencheckbox:false,category: 'Дизайн key visual: ', showwordprefix:'', comment:'дизайн сертификатов победителям', price: '200', stocked: true, name: 'Дизайн сертификатов победителям (до 3 макетов)', arrOfVlue:'none'},  
 		  
@@ -203,8 +204,8 @@ class DankButton extends React.Component {
 				var usersControlFormula = [];
 				if (product.arrOfVlue=='inputdistributor') {
 					usersControlFormula.push(<div><input className="width20" type="text"  onChange={this.setDistributorQuantiy.bind(this,index)}  value={this.state.value}/></div>);
-				} else if (product.arrOfVlue=='inputbanner') {
-					usersControlFormula.push(<div><input className="width20" type="text"  onChange={this.setBannerQuantiy.bind(this,index)}  value={this.state.value}/></div>);
+				} else if (product.unicname=='count_for_banner') {
+					usersControlFormula.push(<div><input className="width20" type="text"  onChange={this.setBannerQuantiy.bind(this,index)}  value={this.state.resultPrices[index].multinumber}/></div>);
 				} else if (product.arrOfVlue=='none') {
 					usersControlFormula.push(<div></div>);//<!-- for comment and so on-->
 				} else {		
@@ -258,7 +259,8 @@ class DankButton extends React.Component {
 	///////////
 	
 	setBannerQuantiy(indexinarray,event){
-		 /* var valueForBannerQuantity = event.target.value;
+		 alert(event.target.value);
+		  var valueForBannerQuantity = event.target.value;
 		 var newArrForFormula = this.state.resultPrices;
 		 newArrForFormula[indexinarray].multinumber = valueForBannerQuantity;
 	 
@@ -269,7 +271,7 @@ class DankButton extends React.Component {
 		   });   
 		  this.setState({ resultPrices: newArrForFormula });
 
-		  this.recountIt(); */
+		  this.recountIt();
 	}
 	
 	setDistributorQuantiy(indexinarray,event){
@@ -337,14 +339,11 @@ class DankButton extends React.Component {
 		this.state.resultPrices.map(function(currentRow,index) {
 		//only Price-generation stirngs must be used here
 		if (currentRow.baseprice != 0 && currentRow.needit == true ){
-			/*	if (currentRow.unicname == price_for_banner) {
-				alert('we in price!');
-			}
-			 	//forAmount = 600;// + (300*(parseInt(currentRow.multinumber)-1));			
-					forAmount =  parseFloat(forAmount) + (600 + (300*(parseInt(currentRow.multinumber)-1)));			
+			if (currentRow.unicname == 'price_for_banner') {
+				forAmount =  parseFloat(forAmount) + (600 + (300*(parseInt(currentRow.multinumber)-1)));			
 			} else { 
-			}  */
-					forAmount = (parseFloat(forAmount) + parseFloat(currentRow.baseprice)*parseFloat(currentRow.multinumber)).toFixed(2);
+				forAmount = (parseFloat(forAmount) + parseFloat(currentRow.baseprice)*parseFloat(currentRow.multinumber)).toFixed(2);
+			}
 		}
 	});
 		
